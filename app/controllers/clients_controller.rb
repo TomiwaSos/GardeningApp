@@ -28,9 +28,9 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      render json: @client
+      render json: @client, status: :created
     else
-      render json: @client.errors
+      render json: @client.errors, status: :unprocessable_entity
     end
   end
 
