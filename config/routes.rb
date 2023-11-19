@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   resources :clients
   resources :employees
+  resources :invoices
 end
