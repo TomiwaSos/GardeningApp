@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :clients
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 end
