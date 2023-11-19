@@ -1,0 +1,18 @@
+# test/fixtures/clients.yml
+one:
+  name: "User 1"
+  address: "address 1"
+  number: "1111"
+  email: "1@example.com"
+
+two:
+  name: "User 2"
+  address: "address 2"
+  number: "2222"
+  email: "2@example.com"
+
+three:
+  name: "User 3"
+  address: "address3"
+  number: "3333"
+  email: "3@example.com"
