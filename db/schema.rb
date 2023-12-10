@@ -30,6 +30,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_19_211109) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table "invoices", force: :cascade do |t|
+    t.float "amount_due"
+    t.date "due_date"
+    t.integer "payment_status"
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
