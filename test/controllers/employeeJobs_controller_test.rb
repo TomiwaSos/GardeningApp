@@ -26,7 +26,7 @@ class EmployeeJobsController < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create Employee Job" do
+  test "should not create Employee Job" do
     assert_difference('EmployeeJob.count', 1) do
       post employeeJobs_url, params: { employee_id: ''}, as: :json
   end
