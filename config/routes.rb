@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :clients
+  resources :jobs
   resources :invoices
 end
