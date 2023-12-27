@@ -3,12 +3,12 @@ require 'test_helper'
 
 class JobsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @job = jobs(:one)
+    @job = jobs(:sucessfulJob)
   end
 
   # Should show all jobs
   test "should show index" do
-    get jobs_url, as, :json
+    get jobs_url, as: :json
     assert_response :success
     assert_equal 5, JSON.parse(response.body).size
   end
@@ -58,9 +58,9 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
     patch job_url(@job), params: { description: "Updated Description", date: "02/02/2024", location: "456 Address", client_id: "2"}
     @job.reload
     assert_equal 'Updated Description', @job.description
-    assert_equal 'Updated date', @job.date
-    assert_equal 'Updated location', @job.location
-    assert_equal 'Updated client_id', @job.client_id
+    assert_equal Date.new(2024, 02, 02), @job.date
+    assert_equal '456 Address', @job.location
+    assert_equal 2, @job.client_id
   end
 
   # This should delete a job
