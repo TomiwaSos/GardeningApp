@@ -1,0 +1,12 @@
+# test/fiuxtures/employeejJobs.yaml
+sucessfulEntry:
+  job_id: '01'
+  employee_id: '1'
+
+jobIDEmpty:
+  job_id: ''
+  employee_id: '1'
+
+  employeeIdEmpty:
+  job_id: '01'
+  employee_id: ''
