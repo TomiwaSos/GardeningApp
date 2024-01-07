@@ -16,21 +16,21 @@ class EmployeeJobsController < ActionDispatch::IntegrationTest
       assert_difference('EmployeeJob.count', 1) do
         post employeeJobs_url, params: { job_id: '01', employee_id: '1'}, as: :json
     end
-    assert_response :success
+    assert_response :unprocessable_entity
   end
 
     test "should not create Employee Job with invalid params" do
       assert_difference('EmployeeJob.count', 1) do
-        post employeeJobs_url, params: { job_id: ''}, as: :json
+        post employeeJobs_url, params: {  job_id: '', employee_id: '1'}, as: :json
     end
-    assert_response :success
+    assert_equal JSON.parse(response.body), {"job_id"=>["can't be blank"]}
   end
 
   test "should not create Employee Job" do
     assert_difference('EmployeeJob.count', 1) do
-      post employeeJobs_url, params: { employee_id: ''}, as: :json
+      post employeeJobs_url, params: {  job_id: '01', employee_id: ''}, as: :json
   end
-  assert_response :success
+  assert_equal JSON.parse(response.body), {"employee_id"=>["can't be blank"]}
   end
 
 end
