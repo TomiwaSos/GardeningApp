@@ -1,0 +1,29 @@
+sucessfulJob:
+  description: 'description test'
+  date: 'date test'
+  location: 'location test'
+  client_id: 'client_id test'
+
+descriptionEmpty:
+  description: ''
+  date: 'date test'
+  location: 'location test'
+  client_id: 'client_id test'
+
+dateEmpty:
+  description: 'description test'
+  date: ''
+  location: 'location test'
+  client_id: 'client_id test'
+
+locationEmpty:
+  description: 'description test'
+  date: 'date test'
+  location: ''
+  client_id: 'client_id test'
+
+client_idEmpty:
+  description: 'description test'
+  date: 'date test'
+  location: 'location test'
+  client_id: ''

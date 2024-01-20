@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_12_202628) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_15_204709) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.text "address"
     t.string "number"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employeejobs", force: :cascade do |t|
+    t.integer "job_id"
+    t.integer "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +40,22 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_202628) do
     t.float "amount_due"
     t.date "due_date"
     t.integer "payment_status"
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_invoices", force: :cascade do |t|
+    t.integer "invoice_id"
+    t.integer "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.text "description"
+    t.date "date"
+    t.text "location"
     t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
