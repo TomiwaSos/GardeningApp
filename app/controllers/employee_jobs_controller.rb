@@ -3,23 +3,6 @@ class EmployeeJobsController < ApplicationController
 
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @employeeJobs = EmployeeJob.all
-    render json: @employeejobs
-  end
-
-  def show
-    render json: @employeejob
-  end
-
-  def new
-    @employeejob = @EmployeeJob.new
-  end
-
-  def edit
-
-  end
-
   def create
     @employeejob = EmployeeJob.new(employeejob_params)
     if @employeejob.save

@@ -1,4 +1,7 @@
 class Employeejob < ApplicationRecord
-  validates :job_id, presence: true
-  validates :employee_id, presence: true
+  validates :job, presence: true
+  validates :employee, presence: true
+
+  belongs_to :job
+  belongs_to :employee
 end

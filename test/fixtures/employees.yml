@@ -1,0 +1,29 @@
+completed:
+  name: 'Employee 1'
+  phone_number: '07712345678'
+  address: 'Address 1'
+  email: 'Employee@example.com'
+
+nameEmpty:
+  name: ''
+  phone_number: '07712345678'
+  address: 'Address 1'
+  email: 'Employee@example.com'
+
+phoneEmpty:
+  name: 'Employee 1'
+  phone_number: ''
+  address: 'Address 1'
+  email: 'Employee@example.com'
+
+addressMissing:
+  name: 'Employee 1'
+  phone_number: '07712345678'
+  address: ''
+  email: 'Employee@example.com'
+
+emailMissing:
+  name: 'Employee 1'
+  phone_number: '07712345678'
+  address: 'Address 1'
+  email: ''
