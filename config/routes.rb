@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :clients
+  resources :employees
+  resources :jobs
   resources :invoices
   devise_for :users, controllers: {
     sessions: 'users/sessions',
