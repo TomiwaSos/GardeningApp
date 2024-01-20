@@ -6,4 +6,6 @@ class Job < ApplicationRecord
 
   has_many :job_invoices
   has_many :invoices, through: :job_invoices # allows us to call job.invoices
+  has_many :employee_jobs
+  has_many :employees, through: :employee_jobs # allows us to call job.employees
 end
