@@ -1,4 +1,4 @@
-class Employeejob < ApplicationRecord
+class EmployeeJob < ApplicationRecord
   validates :job, presence: true
   validates :employee, presence: true
 
