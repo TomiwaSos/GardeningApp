@@ -1,0 +1,11 @@
+sucessfulUser:
+  username: 'username test'
+  password: 'password test'
+
+unsucessfulUsername:
+  username: ''
+  password: 'password test'
+
+unsucessfulPassword:
+  username: 'username test'
+  password: ''
