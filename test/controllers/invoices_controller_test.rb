@@ -1,6 +1,3 @@
-# test/controllers/invopices_controller_test.rb
-require "test_helper"
-
 class InvoicesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @invoice = invoices(:sucessfulInvoice)
