@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   // Function to log in the user
   const login = async (email, password) => {
     const success = await loginUser(email, password); // Use the loginUser function
-    console.log('content of success:'+ success)
+
     setIsAuthenticated(success); // Update the authentication status based on success
     return success;
   };
