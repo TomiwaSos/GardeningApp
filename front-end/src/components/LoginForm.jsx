@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext'; 
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const navigate = useNavigate(); 
   const [email, setEmail] = useState(''); // State to store the email input
   const [password, setPassword] = useState(''); // State to store the password input
   const [error, setError] = useState(''); // State to store any error message
@@ -9,12 +11,13 @@ const LoginForm = () => {
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
-    console.log(event)
     event.preventDefault(); // Prevent default form submission behavior
     setError(''); // Reset error message
     // Invoke the onLogin function passed as a prop, providing email and password
     const success = await login(email, password);
-    if (!success) {
+    if (success) {
+      navigate('/home');
+    } else {
       // Update the error state if login is unsuccessful
       setError('Failed to login. Please check your credentials and try again.');
     }
