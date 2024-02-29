@@ -25,7 +25,6 @@ const RegistrationForm = () => {
     } else {
       var errors = ""
       for (let i = 0; i < response.errors.length; i++) {
-        console.log(response.errors[i])
         errors += response.errors[i] + ", ";
       }
       setError(errors);
