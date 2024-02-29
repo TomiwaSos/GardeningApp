@@ -33,3 +33,34 @@ export const loginUser = async (email, password) => {
       return false;
     }
   };
+
+  // Function to perform the login operation
+export const registerUser = async (email, password) => {
+  try {
+    const response = await fetch('http://localhost:3001/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Include if your backend expects credentials
+      body: JSON.stringify({
+        user: {
+          email,
+          password,
+        },
+      }),
+    
+    });
+
+    if (response.ok) {
+      return true;
+    } else {
+    // Handle non-OK responses here, before calling response.json()
+    const data = await response.json();
+    return data;
+    }
+  } catch (error) {
+    console.error('Login error:', error);
+    return false;
+  }
+};

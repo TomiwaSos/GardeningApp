@@ -31,7 +31,10 @@
 
 /public/assets
 
+/back-end/tmp
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-back-end/tmp
+/back-end/tmp
+/back-end/tmp/*
 /vendor
