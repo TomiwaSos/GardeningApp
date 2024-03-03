@@ -5,6 +5,8 @@ import ProtectedRoute from './components/ProtectedRoute'; // Adjust the import p
 import HomePage from './components/HomePage'; // Adjust the path as needed
 import LoginPage from './components/LoginPage'; // Adjust the path as needed
 import RegistrationPage from './components/RegistrationPage'; // Adjust the path as needed
+import InvoicePage from './components/InvoicePage'; // Adjust the path as needed
+import InvoiceCreatePage from './components/CreateInvoicePage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
           <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/invoice" element={<ProtectedRoute><InvoicePage /></ProtectedRoute>} />
+          <Route path="/invoice/create" element={<ProtectedRoute><InvoiceCreatePage /></ProtectedRoute>} />
           {/* Update other routes similarly */}
         </Routes>
       </Router>

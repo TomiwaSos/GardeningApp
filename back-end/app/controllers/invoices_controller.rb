@@ -6,8 +6,9 @@ class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   def index
+    byebug
     @invoices = Invoice.all
-    render json: @invoices
+    render json: {array: @invoices}, status: :ok
   end
 
   def show
