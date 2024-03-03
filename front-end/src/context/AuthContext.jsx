@@ -8,11 +8,16 @@ export const useAuth = () => useContext(AuthContext);
 
 // Provider component that wraps your app and provides auth state
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // State to store authentication status
-
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    // Check local storage (or session storage) for an auth flag/token
+    const isAuth = localStorage.getItem('isAuthenticated') === 'true';
+    return isAuth;
+  });
+  
   // Function to log in the user
   const login = async (email, password) => {
     const success = await loginUser(email, password); // Use the loginUser function
+
     setIsAuthenticated(success); // Update the authentication status based on success
     return success;
   };

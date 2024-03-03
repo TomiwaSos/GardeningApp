@@ -1,12 +1,12 @@
 class Users::SessionsController < Devise::SessionsController
   respond_to :json
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
-    self.resource = warden.authenticate!(auth_options)
-    sign_in(resource_name, resource)
+    user = User.find_for_authentication(email: params[:user][:email])
 
-    if resource.persisted?
-      render json: { message: 'Logged in successfully.', user: resource }, status: :ok
+    if user && user.valid_password?(params[:user][:password])
+      render json: { message: 'Logged in successfully.', user: resource, csrf_token: form_authenticity_token }, status: :ok
     else
       render json: { message: 'Sign in failed.' }, status: :unauthorized
     end

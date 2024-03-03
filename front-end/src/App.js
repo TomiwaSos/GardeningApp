@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext'; // Adjust the import path 
 import ProtectedRoute from './components/ProtectedRoute'; // Adjust the import path as needed
 import HomePage from './components/HomePage'; // Adjust the path as needed
 import LoginPage from './components/LoginPage'; // Adjust the path as needed
+import RegistrationPage from './components/RegistrationPage'; // Adjust the path as needed
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+          <Route path="/register" element={<RegistrationPage />} />
           {/* Update other routes similarly */}
         </Routes>
       </Router>
