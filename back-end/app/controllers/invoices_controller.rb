@@ -6,7 +6,6 @@ class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   def index
-    byebug
     @invoices = Invoice.all
     render json: {array: @invoices}, status: :ok
   end
@@ -55,6 +54,6 @@ class InvoicesController < ApplicationController
   end
 
   def invoice_params
-    params.permit(:amount_due, :due_date, :payment_status, :client_id)
+    params.permit(:id, :amount_due, :due_date, :payment_status, :client_id)
   end
 end
