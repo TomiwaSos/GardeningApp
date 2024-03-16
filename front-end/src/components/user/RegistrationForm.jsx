@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../utils/api.js'; // Import the registerUser function
+import { registerUser } from '../../utils/api.js'; // Import the registerUser function
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ const RegistrationForm = () => {
         />
       </div>
       {error && <p>{error}</p>}
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
     </form>
   );
 };

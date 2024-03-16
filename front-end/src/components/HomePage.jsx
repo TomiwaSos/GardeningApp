@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoutButton from './LogoutButton';
+import LogoutButton from './user/LogoutButton';
 
 const HomePage = () => {
   return (
