@@ -11,6 +11,7 @@ class InvoicesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal 5, JSON.parse(response.body).size
   end
+
   # Creates a new invoice with correct parameters
   test "should create a new invoice" do
     assert_difference('Invoice.count', 1) do
