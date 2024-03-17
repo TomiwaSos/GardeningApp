@@ -19,11 +19,11 @@ dueDateEmpty:
 paymentStatusEmpty:
   amount_due: 100.0
   due_date: '01/03/2024'
-  payment_status: 
+  payment_status: ''
   client_id: 1
 
 clientIDEmpty:
   amount_due: 100.0
   due_date: '01/03/2024'
   payment_status: 0
-  client_id: 
+  client_id: ''
