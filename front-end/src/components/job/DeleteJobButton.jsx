@@ -1,20 +1,22 @@
 import React from 'react';
+import { deleteJob } from '../../utils/api.js';
 import { useNavigate } from 'react-router-dom';
 
-const CreateInvoiceButton = () => {
-  const navigate = useNavigate(); 
+const InvoiceDeleteButton = ({ id }) => {
+  const navigate = useNavigate();
 
   // Function to handle form submission
   const handleClick = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
-    navigate('/invoice/create');
+    deleteJob(id);
+    navigate(`/job`);
   };
 
   return (
     <button onClick={handleClick}>
-      Create Invoice
+      Delete Invoice
     </button>
   );
 };
 
-export default CreateInvoiceButton;
+export default InvoiceDeleteButton;

@@ -35,7 +35,7 @@
 /back-end/log
 /back-end/.byebug_history
 /back-end/tmp/cache
-
+/back-end/storage
 # to remove a pesky file run git rm --cached <file path> -r to remove it for git history, .gitignore should work after doing that
 
 # Ignore master key for decrypting credentials and more.

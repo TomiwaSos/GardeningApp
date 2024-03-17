@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createInvoiece } from '../../utils/api.js'; // Import the registerUser function
+import { createInvoice } from '../../utils/api.js'; // Import the registerUser function
 
 
 const InvoiceCreation= () => {
@@ -17,7 +17,7 @@ const InvoiceCreation= () => {
 
     setError('');
 
-    const response = await createInvoiece(amount_due, due_date, payment_status, client_id);
+    const response = await createInvoice(amount_due, due_date, payment_status, client_id);
      
     if (response.id) {
       navigate('/invoice');
