@@ -26,5 +26,4 @@ Things you may want to cover:
 # GardeningApp
 
 Tomiwa sosanya
-DariusICB
 George Koundouri

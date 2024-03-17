@@ -7,7 +7,7 @@ class InvoicesController < ApplicationController
 
   def index
     @invoices = Invoice.all
-    render json: @invoices
+    render json: {array: @invoices}, status: :ok
   end
 
   def show
@@ -54,6 +54,6 @@ class InvoicesController < ApplicationController
   end
 
   def invoice_params
-    params.permit(:amount_due, :due_date, :payment_status, :client_id)
+    params.permit(:id, :amount_due, :due_date, :payment_status, :client_id)
   end
 end
