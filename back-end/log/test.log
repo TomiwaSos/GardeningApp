@@ -4488,3 +4488,182 @@ Processing by JobsController#update as HTML
 Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 859)
   [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 380958929], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "clients";
+DELETE FROM "employeejobs";
+DELETE FROM "employees";
+DELETE FROM "jobs";
+DELETE FROM "users";
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (980190962, 'User 1', 'address 1', '1111', '1@example.com', '2024-03-17 13:10:10.258646', '2024-03-17 13:10:10.258646');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (298486374, 'User 2', 'address 2', '2222', '2@example.com', '2024-03-17 13:10:10.258646', '2024-03-17 13:10:10.258646');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (113629430, 'User 3', 'address3', '3333', '3@example.com', '2024-03-17 13:10:10.258646', '2024-03-17 13:10:10.258646');
+INSERT INTO "employeejobs" ("id", "job_id", "employee_id", "created_at", "updated_at") VALUES (827439425, 1, 1, '2024-03-17 13:10:10.259817', '2024-03-17 13:10:10.259817');
+INSERT INTO "employeejobs" ("id", "job_id", "employee_id", "created_at", "updated_at") VALUES (505776241, NULL, 1, '2024-03-17 13:10:10.259817', '2024-03-17 13:10:10.259817');
+INSERT INTO "employeejobs" ("id", "job_id", "employee_id", "created_at", "updated_at") VALUES (549217364, 1, NULL, '2024-03-17 13:10:10.259817', '2024-03-17 13:10:10.259817');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (989355118, 'Employee 1', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 13:10:10.260502', '2024-03-17 13:10:10.260502');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (865450158, '', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 13:10:10.260502', '2024-03-17 13:10:10.260502');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (388444361, 'Employee 1', '', 'Address 1', 'Employee@example.com', '2024-03-17 13:10:10.260502', '2024-03-17 13:10:10.260502');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1031217276, 'Employee 1', '07712345678', '', 'Employee@example.com', '2024-03-17 13:10:10.260502', '2024-03-17 13:10:10.260502');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1001682488, 'Employee 1', '07712345678', 'Address 1', '', '2024-03-17 13:10:10.260502', '2024-03-17 13:10:10.260502');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (380958929, 'description test', NULL, 'location test', NULL, '2024-03-17 13:10:10.261100', '2024-03-17 13:10:10.261100');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (36437455, '', NULL, 'location test', NULL, '2024-03-17 13:10:10.261100', '2024-03-17 13:10:10.261100');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (352185138, 'description test', NULL, 'location test', NULL, '2024-03-17 13:10:10.261100', '2024-03-17 13:10:10.261100');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (875026332, 'description test', NULL, '', NULL, '2024-03-17 13:10:10.261100', '2024-03-17 13:10:10.261100');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (759052964, 'description test', NULL, 'location test', NULL, '2024-03-17 13:10:10.261100', '2024-03-17 13:10:10.261100');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 13:10:10.261739', '2024-03-17 13:10:10.261739');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 13:10:10.261739', '2024-03-17 13:10:10.261739')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------
+EmployeesControllerTest: test_should_not_create_a_employee_with_invalid_address_params
+--------------------------------------------------------------------------------------
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Started POST "/employees" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#create as JSON
+  Parameters: {"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"", "email"=>"Employee@example.com", "employee"=>{"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"", "email"=>"Employee@example.com"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :employee. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0d9cdadd50>, params: {"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"", "email"=>"Employee@example.com", "controller"=>"employees", "action"=>"create", "employee"=>{"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"", "email"=>"Employee@example.com"}} }[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2525)
+  [1m[36mCACHE Employee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------
+EmployeesControllerTest: test_should_not_create_a_employee_with_invalid_Email_params
+------------------------------------------------------------------------------------
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Started POST "/employees" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#create as JSON
+  Parameters: {"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"", "employee"=>{"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>""}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :employee. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0d9cb9d8f8>, params: {"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"", "controller"=>"employees", "action"=>"create", "employee"=>{"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>""}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 665)
+  [1m[36mCACHE Employee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+EmployeesControllerTest: test_should_get_index
+----------------------------------------------
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+Started GET "/employees" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#index as JSON
+  Parameters: {"employee"=>{}}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 708)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+EmployeesControllerTest: test_should_not_create_a_employee_with_invalid_phone_number_params
+-------------------------------------------------------------------------------------------
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Started POST "/employees" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#create as JSON
+  Parameters: {"name"=>"Employee 1", "phone_number"=>"", "address"=>"Address 1", "email"=>"Employee@example.com", "employee"=>{"name"=>"Employee 1", "phone_number"=>"", "address"=>"Address 1", "email"=>"Employee@example.com"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :employee. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0d9cb91918>, params: {"name"=>"Employee 1", "phone_number"=>"", "address"=>"Address 1", "email"=>"Employee@example.com", "controller"=>"employees", "action"=>"create", "employee"=>{"name"=>"Employee 1", "phone_number"=>"", "address"=>"Address 1", "email"=>"Employee@example.com"}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 670)
+  [1m[36mCACHE Employee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+EmployeesControllerTest: test_should_update_employee
+----------------------------------------------------
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+Started PATCH "/employees/989355118" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#update as HTML
+  Parameters: {"name"=>"Updated Name", "phone_number"=>"987654321", "address"=>"Updated Addres", "email"=>"updatedEmployee@example.com", "id"=>"989355118"}
+Can't verify CSRF token authenticity.
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id. Context: { controller: EmployeesController, action: update, request: #<ActionDispatch::Request:0x00007f0d9cb49b18>, params: {"name"=>"Updated Name", "phone_number"=>"987654321", "address"=>"Updated Addres", "email"=>"updatedEmployee@example.com", "controller"=>"employees", "action"=>"update", "id"=>"989355118"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Update (0.3ms)[0m  [1m[33mUPDATE "employees" SET "name" = ?, "phone_number" = ?, "address" = ?, "email" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["name", "Updated Name"], ["phone_number", "987654321"], ["address", "Updated Addres"], ["email", "updatedEmployee@example.com"], ["updated_at", "2024-03-17 13:10:10.452320"], ["id", 989355118]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1461)
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+EmployeesControllerTest: test_should_show_employee
+--------------------------------------------------
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+Started GET "/employees/989355118" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#show as JSON
+  Parameters: {"id"=>"989355118", "employee"=>{}}
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 254)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+EmployeesControllerTest: test_should_destroy_employee
+-----------------------------------------------------
+  [1m[36mEmployee Load (9.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Started DELETE "/employees/989355118" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#destroy as JSON
+  Parameters: {"id"=>"989355118", "employee"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 989355118]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 562)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+EmployeesControllerTest: test_should_create_employee
+----------------------------------------------------
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Started POST "/employees" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#create as HTML
+  Parameters: {"name"=>"Employee 1", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"Employee@example.com"}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Employee 1"], ["phone_number", "07712345678"], ["address", "Address 1"], ["email", "Employee@example.com"], ["created_at", "2024-03-17 13:10:10.475391"], ["updated_at", "2024-03-17 13:10:10.475391"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 759)
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+EmployeesControllerTest: test_should_not_create_a_employee_with_invalid_Name_params
+-----------------------------------------------------------------------------------
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 989355118], ["LIMIT", 1]]
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Started POST "/employees" for 127.0.0.1 at 2024-03-17 13:10:10 +0000
+Processing by EmployeesController#create as JSON
+  Parameters: {"name"=>"", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"Employee@example.com", "employee"=>{"name"=>"", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"Employee@example.com"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :employee. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0d9cf53ad8>, params: {"name"=>"", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"Employee@example.com", "controller"=>"employees", "action"=>"create", "employee"=>{"name"=>"", "phone_number"=>"07712345678", "address"=>"Address 1", "email"=>"Employee@example.com"}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 667)
+  [1m[36mCACHE Employee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
