@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getInvoices } from '../../utils/api.js';
 import InvoiceShowButton from './ShowButton.jsx';
-import InvoiceDeleteButton from './DeleteButton.jsx';
 
 const InvoiceResults = () => {
   const [invoices, setInvoices] = useState(null); // use state is used to set a variable that is expected to change 

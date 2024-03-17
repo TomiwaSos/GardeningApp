@@ -184,3 +184,41 @@ export const deleteInvoice = async (id) => {
     return false;
   }
 }
+
+export const getJobs = async () => {
+  try {
+    const response = await fetch (`http://localhost:3001/jobs`, {
+      mehtod: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Jobs error:', error);
+    return false;
+  }
+}
+
+export const getJob = async (id) => {
+  try {
+    const response = await fetch (`http://localhost:3001/jobs/${id}`, {
+      mehtod: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Jobs error:', error);
+    return false;
+  }
+}
