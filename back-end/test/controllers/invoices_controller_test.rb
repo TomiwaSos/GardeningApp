@@ -23,7 +23,7 @@ class InvoicesControllerTest < ActionDispatch::IntegrationTest
   # This should not create a new invoice with an empty Amount_Due parameter
   test "should not creat an invoice with an empty Amount_Due parameter" do
     assert_no_difference('Invoice.count') do
-      post invoices_url, params: {amount_due: ""}, as: :json # Amount_Due is required
+      post invoices_url, params: {amount_due: '' , due_date: '01/03/2024', payment_status: 0, client_id: 1}, as: :json # Amount_Due is required
     end
     assert_response :success
   end
@@ -31,7 +31,7 @@ class InvoicesControllerTest < ActionDispatch::IntegrationTest
     # This should not create a new invoice with an empty Due_date parameter
   test "should not creat an invoice with an empty Due_date parameter" do
     assert_no_difference('Invoice.count') do
-      post invoices_url, params: {due_date: ""}, as: :json # Due_date is required
+      post invoices_url, params: {amount_due: 100.0, due_date: '', payment_status: 0, client_id: 1}, as: :json # Due_date is required
     end
     assert_response :success
   end
@@ -39,7 +39,7 @@ class InvoicesControllerTest < ActionDispatch::IntegrationTest
   # This should not create a new invoice with an empty Payment_status parameter
   test "should not creat an invoice with an empty Payment_status parameter" do
     assert_no_difference('Invoice.count') do
-      post invoices_url, params: {payment_status: ""}, as: :json # Payment_status is required
+      post invoices_url, params: {amount_due: 100.0, due_date: '01/03/2024', payment_status: '', client_id: 1}, as: :json # Payment_status is required
     end
     assert_response :success
   end
@@ -47,7 +47,7 @@ class InvoicesControllerTest < ActionDispatch::IntegrationTest
   # This should not create a new invoice with an empty Clinet_id parameter
   test "should not creat an invoice with an empty Clinet_id parameter" do
     assert_no_difference('Invoice.count') do
-      post invoices_url, params: {clinet_id: ""}, as: :json # Clinet_id is required
+      post invoices_url, params: {amount_due: 100.0, due_date: '01/03/2024', payment_status: 0, client_id: ''}, as: :json # Clinet_id is required
     end
     assert_response :success
   end

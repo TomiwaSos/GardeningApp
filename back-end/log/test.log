@@ -8698,3 +8698,603 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1504)
   [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (217.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (261.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "clients";
+DELETE FROM "employeejobs";
+DELETE FROM "employees";
+DELETE FROM "invoices";
+DELETE FROM "jobs";
+DELETE FROM "users";
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (980190962, 'User 1', 'address 1', '1111', '1@example.com', '2024-03-17 20:28:06.442682', '2024-03-17 20:28:06.442682');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (298486374, 'User 2', 'address 2', '2222', '2@example.com', '2024-03-17 20:28:06.442682', '2024-03-17 20:28:06.442682');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (113629430, 'User 3', 'address3', '3333', '3@example.com', '2024-03-17 20:28:06.442682', '2024-03-17 20:28:06.442682');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:28:06.444475', '2024-03-17 20:28:06.444475');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:28:06.444475', '2024-03-17 20:28:06.444475');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (989355118, 'Employee 1', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:28:06.445408', '2024-03-17 20:28:06.445408');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (865450158, '', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:28:06.445408', '2024-03-17 20:28:06.445408');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (388444361, 'Employee 1', '', 'Address 1', 'Employee@example.com', '2024-03-17 20:28:06.445408', '2024-03-17 20:28:06.445408');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1031217276, 'Employee 1', '07712345678', '', 'Employee@example.com', '2024-03-17 20:28:06.445408', '2024-03-17 20:28:06.445408');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1001682488, 'Employee 1', '07712345678', 'Address 1', '', '2024-03-17 20:28:06.445408', '2024-03-17 20:28:06.445408');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461847090, 100.0, '2024-03-01', 0, 1, '2024-03-17 20:28:06.446605', '2024-03-17 20:28:06.446605');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (452873925, NULL, '2024-03-01', 0, 1, '2024-03-17 20:28:06.446605', '2024-03-17 20:28:06.446605');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (406838720, 100.0, NULL, 0, 1, '2024-03-17 20:28:06.446605', '2024-03-17 20:28:06.446605');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (470036789, 100.0, '2024-03-01', NULL, 1, '2024-03-17 20:28:06.446605', '2024-03-17 20:28:06.446605');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461893187, 100.0, '2024-03-01', 0, NULL, '2024-03-17 20:28:06.446605', '2024-03-17 20:28:06.446605');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (380958929, 'description test', NULL, 'location test', NULL, '2024-03-17 20:28:06.447810', '2024-03-17 20:28:06.447810');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (36437455, '', NULL, 'location test', NULL, '2024-03-17 20:28:06.447810', '2024-03-17 20:28:06.447810');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (352185138, 'description test', NULL, 'location test', NULL, '2024-03-17 20:28:06.447810', '2024-03-17 20:28:06.447810');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (875026332, 'description test', NULL, '', NULL, '2024-03-17 20:28:06.447810', '2024-03-17 20:28:06.447810');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (759052964, 'description test', NULL, 'location test', NULL, '2024-03-17 20:28:06.447810', '2024-03-17 20:28:06.447810');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:28:06.448806', '2024-03-17 20:28:06.448806');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:28:06.448806', '2024-03-17 20:28:06.448806')[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_delete_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started DELETE "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:28:06 +0000
+Processing by InvoicesController#destroy as JSON
+  Parameters: {"id"=>"461847090", "invoice"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Destroy (0.2ms)[0m  [1m[31mDELETE FROM "invoices" WHERE "invoices"."id" = ?[0m  [["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1168)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+InvoicesControllerTest: test_should_show_invoices
+-------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started GET "/invoices" for 127.0.0.1 at 2024-03-17 20:28:06 +0000
+Processing by InvoicesController#index as JSON
+  Parameters: {"invoice"=>{}}
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices"[0m
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 737)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+InvoicesControllerTest: test_should_create_a_new_invoice
+--------------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:28:06 +0000
+Processing by InvoicesController#create as HTML
+  Parameters: {"amount_due"=>"100.0", "due_date"=>"01/03/2024", "payment_status"=>"0", "client_id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Create (0.4ms)[0m  [1m[32mINSERT INTO "invoices" ("amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["amount_due", 100.0], ["due_date", "2024-03-01"], ["payment_status", 0], ["client_id", 1], ["created_at", "2024-03-17 20:28:06.655045"], ["updated_at", "2024-03-17 20:28:06.655045"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1313)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Payment_status_parameter
+-----------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Payment_status_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_update_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started PATCH "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:28:06 +0000
+Processing by InvoicesController#update as HTML
+  Parameters: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "id"=>"461847090"}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id. Context: { controller: InvoicesController, action: update, request: #<ActionDispatch::Request:0x00007f3a4a348678>, params: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "controller"=>"invoices", "action"=>"update", "id"=>"461847090"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Update (0.2ms)[0m  [1m[33mUPDATE "invoices" SET "amount_due" = ?, "due_date" = ?, "payment_status" = ?, "client_id" = ?, "updated_at" = ? WHERE "invoices"."id" = ?[0m  [["amount_due", 200.0], ["due_date", "2024-04-04"], ["payment_status", 1], ["client_id", 2], ["updated_at", "2024-03-17 20:28:06.665837"], ["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 1077)
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Due_date_parameter
+-----------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:28:06 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007f3a4a78ad30>, params: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}} }[0m
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 1869)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter
+-------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter
+------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "clients";
+DELETE FROM "employeejobs";
+DELETE FROM "employees";
+DELETE FROM "invoices";
+DELETE FROM "jobs";
+DELETE FROM "users";
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (980190962, 'User 1', 'address 1', '1111', '1@example.com', '2024-03-17 20:29:05.342390', '2024-03-17 20:29:05.342390');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (298486374, 'User 2', 'address 2', '2222', '2@example.com', '2024-03-17 20:29:05.342390', '2024-03-17 20:29:05.342390');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (113629430, 'User 3', 'address3', '3333', '3@example.com', '2024-03-17 20:29:05.342390', '2024-03-17 20:29:05.342390');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:29:05.344231', '2024-03-17 20:29:05.344231');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:29:05.344231', '2024-03-17 20:29:05.344231');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (989355118, 'Employee 1', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:05.344877', '2024-03-17 20:29:05.344877');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (865450158, '', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:05.344877', '2024-03-17 20:29:05.344877');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (388444361, 'Employee 1', '', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:05.344877', '2024-03-17 20:29:05.344877');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1031217276, 'Employee 1', '07712345678', '', 'Employee@example.com', '2024-03-17 20:29:05.344877', '2024-03-17 20:29:05.344877');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1001682488, 'Employee 1', '07712345678', 'Address 1', '', '2024-03-17 20:29:05.344877', '2024-03-17 20:29:05.344877');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461847090, 100.0, '2024-03-01', 0, 1, '2024-03-17 20:29:05.345535', '2024-03-17 20:29:05.345535');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (452873925, NULL, '2024-03-01', 0, 1, '2024-03-17 20:29:05.345535', '2024-03-17 20:29:05.345535');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (406838720, 100.0, NULL, 0, 1, '2024-03-17 20:29:05.345535', '2024-03-17 20:29:05.345535');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (470036789, 100.0, '2024-03-01', NULL, 1, '2024-03-17 20:29:05.345535', '2024-03-17 20:29:05.345535');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461893187, 100.0, '2024-03-01', 0, NULL, '2024-03-17 20:29:05.345535', '2024-03-17 20:29:05.345535');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (380958929, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:05.346391', '2024-03-17 20:29:05.346391');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (36437455, '', NULL, 'location test', NULL, '2024-03-17 20:29:05.346391', '2024-03-17 20:29:05.346391');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (352185138, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:05.346391', '2024-03-17 20:29:05.346391');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (875026332, 'description test', NULL, '', NULL, '2024-03-17 20:29:05.346391', '2024-03-17 20:29:05.346391');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (759052964, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:05.346391', '2024-03-17 20:29:05.346391');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:29:05.347494', '2024-03-17 20:29:05.347494');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:29:05.347494', '2024-03-17 20:29:05.347494')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Payment_status_parameter
+-----------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Payment_status_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_update_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started PATCH "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:29:05 +0000
+Processing by InvoicesController#update as HTML
+  Parameters: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "id"=>"461847090"}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id. Context: { controller: InvoicesController, action: update, request: #<ActionDispatch::Request:0x00007ffe63b5f298>, params: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "controller"=>"invoices", "action"=>"update", "id"=>"461847090"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Update (0.3ms)[0m  [1m[33mUPDATE "invoices" SET "amount_due" = ?, "due_date" = ?, "payment_status" = ?, "client_id" = ?, "updated_at" = ? WHERE "invoices"."id" = ?[0m  [["amount_due", 200.0], ["due_date", "2024-04-04"], ["payment_status", 1], ["client_id", 2], ["updated_at", "2024-03-17 20:29:05.508095"], ["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 2364)
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+InvoicesControllerTest: test_should_show_invoices
+-------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started GET "/invoices" for 127.0.0.1 at 2024-03-17 20:29:05 +0000
+Processing by InvoicesController#index as JSON
+  Parameters: {"invoice"=>{}}
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 570)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Due_date_parameter
+-----------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:29:05 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007ffe6392d678>, params: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}} }[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 1900)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+InvoicesControllerTest: test_should_create_a_new_invoice
+--------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:29:05 +0000
+Processing by InvoicesController#create as HTML
+  Parameters: {"amount_due"=>"100.0", "due_date"=>"01/03/2024", "payment_status"=>"0", "client_id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Create (0.4ms)[0m  [1m[32mINSERT INTO "invoices" ("amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["amount_due", 100.0], ["due_date", "2024-03-01"], ["payment_status", 0], ["client_id", 1], ["created_at", "2024-03-17 20:29:05.528064"], ["updated_at", "2024-03-17 20:29:05.528064"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 776)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_delete_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started DELETE "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:29:05 +0000
+Processing by InvoicesController#destroy as JSON
+  Parameters: {"id"=>"461847090", "invoice"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Destroy (0.3ms)[0m  [1m[31mDELETE FROM "invoices" WHERE "invoices"."id" = ?[0m  [["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 552)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter
+-------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter
+------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "clients";
+DELETE FROM "employeejobs";
+DELETE FROM "employees";
+DELETE FROM "invoices";
+DELETE FROM "jobs";
+DELETE FROM "users";
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (980190962, 'User 1', 'address 1', '1111', '1@example.com', '2024-03-17 20:29:21.561517', '2024-03-17 20:29:21.561517');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (298486374, 'User 2', 'address 2', '2222', '2@example.com', '2024-03-17 20:29:21.561517', '2024-03-17 20:29:21.561517');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (113629430, 'User 3', 'address3', '3333', '3@example.com', '2024-03-17 20:29:21.561517', '2024-03-17 20:29:21.561517');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:29:21.562902', '2024-03-17 20:29:21.562902');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:29:21.562902', '2024-03-17 20:29:21.562902');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (989355118, 'Employee 1', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:21.563626', '2024-03-17 20:29:21.563626');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (865450158, '', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:21.563626', '2024-03-17 20:29:21.563626');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (388444361, 'Employee 1', '', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:21.563626', '2024-03-17 20:29:21.563626');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1031217276, 'Employee 1', '07712345678', '', 'Employee@example.com', '2024-03-17 20:29:21.563626', '2024-03-17 20:29:21.563626');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1001682488, 'Employee 1', '07712345678', 'Address 1', '', '2024-03-17 20:29:21.563626', '2024-03-17 20:29:21.563626');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461847090, 100.0, '2024-03-01', 0, 1, '2024-03-17 20:29:21.564294', '2024-03-17 20:29:21.564294');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (452873925, NULL, '2024-03-01', 0, 1, '2024-03-17 20:29:21.564294', '2024-03-17 20:29:21.564294');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (406838720, 100.0, NULL, 0, 1, '2024-03-17 20:29:21.564294', '2024-03-17 20:29:21.564294');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (470036789, 100.0, '2024-03-01', NULL, 1, '2024-03-17 20:29:21.564294', '2024-03-17 20:29:21.564294');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461893187, 100.0, '2024-03-01', 0, NULL, '2024-03-17 20:29:21.564294', '2024-03-17 20:29:21.564294');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (380958929, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:21.565000', '2024-03-17 20:29:21.565000');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (36437455, '', NULL, 'location test', NULL, '2024-03-17 20:29:21.565000', '2024-03-17 20:29:21.565000');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (352185138, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:21.565000', '2024-03-17 20:29:21.565000');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (875026332, 'description test', NULL, '', NULL, '2024-03-17 20:29:21.565000', '2024-03-17 20:29:21.565000');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (759052964, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:21.565000', '2024-03-17 20:29:21.565000');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:29:21.565746', '2024-03-17 20:29:21.565746');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:29:21.565746', '2024-03-17 20:29:21.565746')[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter
+------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_delete_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started DELETE "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:29:21 +0000
+Processing by InvoicesController#destroy as JSON
+  Parameters: {"id"=>"461847090", "invoice"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Destroy (0.2ms)[0m  [1m[31mDELETE FROM "invoices" WHERE "invoices"."id" = ?[0m  [["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1163)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_update_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started PATCH "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:29:21 +0000
+Processing by InvoicesController#update as HTML
+  Parameters: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "id"=>"461847090"}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id. Context: { controller: InvoicesController, action: update, request: #<ActionDispatch::Request:0x00007fced6da5c80>, params: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "controller"=>"invoices", "action"=>"update", "id"=>"461847090"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Update (0.3ms)[0m  [1m[33mUPDATE "invoices" SET "amount_due" = ?, "due_date" = ?, "payment_status" = ?, "client_id" = ?, "updated_at" = ? WHERE "invoices"."id" = ?[0m  [["amount_due", 200.0], ["due_date", "2024-04-04"], ["payment_status", 1], ["client_id", 2], ["updated_at", "2024-03-17 20:29:21.728660"], ["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1757)
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Payment_status_parameter
+-----------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:29:21 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1, "invoice"=>{"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007fced6d4d990>, params: {"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1}} }[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 1913)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+InvoicesControllerTest: test_should_show_invoices
+-------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started GET "/invoices" for 127.0.0.1 at 2024-03-17 20:29:21 +0000
+Processing by InvoicesController#index as JSON
+  Parameters: {"invoice"=>{}}
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 569)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+InvoicesControllerTest: test_should_create_a_new_invoice
+--------------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:29:21 +0000
+Processing by InvoicesController#create as HTML
+  Parameters: {"amount_due"=>"100.0", "due_date"=>"01/03/2024", "payment_status"=>"0", "client_id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Create (0.3ms)[0m  [1m[32mINSERT INTO "invoices" ("amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["amount_due", 100.0], ["due_date", "2024-03-01"], ["payment_status", 0], ["client_id", 1], ["created_at", "2024-03-17 20:29:21.746821"], ["updated_at", "2024-03-17 20:29:21.746821"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 768)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Due_date_parameter
+-----------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:29:21 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007fced716b540>, params: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 679)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter
+-------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+InvoicesControllerTest - test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter: NameError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "clients";
+DELETE FROM "employeejobs";
+DELETE FROM "employees";
+DELETE FROM "invoices";
+DELETE FROM "jobs";
+DELETE FROM "users";
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (980190962, 'User 1', 'address 1', '1111', '1@example.com', '2024-03-17 20:29:59.971151', '2024-03-17 20:29:59.971151');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (298486374, 'User 2', 'address 2', '2222', '2@example.com', '2024-03-17 20:29:59.971151', '2024-03-17 20:29:59.971151');
+INSERT INTO "clients" ("id", "name", "address", "number", "email", "created_at", "updated_at") VALUES (113629430, 'User 3', 'address3', '3333', '3@example.com', '2024-03-17 20:29:59.971151', '2024-03-17 20:29:59.971151');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:29:59.972454', '2024-03-17 20:29:59.972454');
+INSERT INTO "employeejobs" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:29:59.972454', '2024-03-17 20:29:59.972454');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (989355118, 'Employee 1', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:59.973907', '2024-03-17 20:29:59.973907');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (865450158, '', '07712345678', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:59.973907', '2024-03-17 20:29:59.973907');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (388444361, 'Employee 1', '', 'Address 1', 'Employee@example.com', '2024-03-17 20:29:59.973907', '2024-03-17 20:29:59.973907');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1031217276, 'Employee 1', '07712345678', '', 'Employee@example.com', '2024-03-17 20:29:59.973907', '2024-03-17 20:29:59.973907');
+INSERT INTO "employees" ("id", "name", "phone_number", "address", "email", "created_at", "updated_at") VALUES (1001682488, 'Employee 1', '07712345678', 'Address 1', '', '2024-03-17 20:29:59.973907', '2024-03-17 20:29:59.973907');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461847090, 100.0, '2024-03-01', 0, 1, '2024-03-17 20:29:59.974600', '2024-03-17 20:29:59.974600');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (452873925, NULL, '2024-03-01', 0, 1, '2024-03-17 20:29:59.974600', '2024-03-17 20:29:59.974600');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (406838720, 100.0, NULL, 0, 1, '2024-03-17 20:29:59.974600', '2024-03-17 20:29:59.974600');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (470036789, 100.0, '2024-03-01', NULL, 1, '2024-03-17 20:29:59.974600', '2024-03-17 20:29:59.974600');
+INSERT INTO "invoices" ("id", "amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (461893187, 100.0, '2024-03-01', 0, NULL, '2024-03-17 20:29:59.974600', '2024-03-17 20:29:59.974600');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (380958929, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:59.975386', '2024-03-17 20:29:59.975386');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (36437455, '', NULL, 'location test', NULL, '2024-03-17 20:29:59.975386', '2024-03-17 20:29:59.975386');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (352185138, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:59.975386', '2024-03-17 20:29:59.975386');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (875026332, 'description test', NULL, '', NULL, '2024-03-17 20:29:59.975386', '2024-03-17 20:29:59.975386');
+INSERT INTO "jobs" ("id", "description", "date", "location", "client_id", "created_at", "updated_at") VALUES (759052964, 'description test', NULL, 'location test', NULL, '2024-03-17 20:29:59.975386', '2024-03-17 20:29:59.975386');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2024-03-17 20:29:59.976288', '2024-03-17 20:29:59.976288');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2024-03-17 20:29:59.976288', '2024-03-17 20:29:59.976288')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+InvoicesControllerTest: test_should_create_a_new_invoice
+--------------------------------------------------------
+  [1m[36mInvoice Load (0.2ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#create as HTML
+  Parameters: {"amount_due"=>"100.0", "due_date"=>"01/03/2024", "payment_status"=>"0", "client_id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Create (0.4ms)[0m  [1m[32mINSERT INTO "invoices" ("amount_due", "due_date", "payment_status", "client_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["amount_due", 100.0], ["due_date", "2024-03-01"], ["payment_status", 0], ["client_id", 1], ["created_at", "2024-03-17 20:30:00.136759"], ["updated_at", "2024-03-17 20:30:00.136759"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1880)
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Amount_Due_parameter
+-------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>"", "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>1, "invoice"=>{"amount_due"=>"", "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007f44bd467310>, params: {"amount_due"=>"", "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>"", "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>1}} }[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2196)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_delete_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started DELETE "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#destroy as JSON
+  Parameters: {"id"=>"461847090", "invoice"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Destroy (0.2ms)[0m  [1m[31mDELETE FROM "invoices" WHERE "invoices"."id" = ?[0m  [["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 755)
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Payment_status_parameter
+-----------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1, "invoice"=>{"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007f44bd4179f0>, params: {"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>"", "client_id"=>1}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 693)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+InvoicesControllerTest: test_should_update_invoice
+--------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started PATCH "/invoices/461847090" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#update as HTML
+  Parameters: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "id"=>"461847090"}
+Can't verify CSRF token authenticity.
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id. Context: { controller: InvoicesController, action: update, request: #<ActionDispatch::Request:0x00007f44bd3bfc00>, params: {"amount_due"=>"200.0", "due_date"=>"04/04/2024", "payment_status"=>"1", "client_id"=>"2", "controller"=>"invoices", "action"=>"update", "id"=>"461847090"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInvoice Update (0.3ms)[0m  [1m[33mUPDATE "invoices" SET "amount_due" = ?, "due_date" = ?, "payment_status" = ?, "client_id" = ?, "updated_at" = ? WHERE "invoices"."id" = ?[0m  [["amount_due", 200.0], ["due_date", "2024-04-04"], ["payment_status", 1], ["client_id", 2], ["updated_at", "2024-03-17 20:30:00.161732"], ["id", 461847090]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1069)
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+InvoicesControllerTest: test_should_show_invoices
+-------------------------------------------------
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+Started GET "/invoices" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#index as JSON
+  Parameters: {"invoice"=>{}}
+  [1m[36mInvoice Load (0.1ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices"[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 571)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Due_date_parameter
+-----------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.4ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007f44bd828350>, params: {"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1, "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"", "payment_status"=>0, "client_id"=>1}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 678)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+InvoicesControllerTest: test_should_not_creat_an_invoice_with_an_empty_Clinet_id_parameter
+------------------------------------------------------------------------------------------
+  [1m[36mInvoice Load (0.0ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" WHERE "invoices"."id" = ? LIMIT ?[0m  [["id", 461847090], ["LIMIT", 1]]
+  [1m[36mInvoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+Started POST "/invoices" for 127.0.0.1 at 2024-03-17 20:30:00 +0000
+Processing by InvoicesController#create as JSON
+  Parameters: {"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>"", "invoice"=>{"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>""}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :invoice. Context: { controller: InvoicesController, action: create, request: #<ActionDispatch::Request:0x00007f44bd51b860>, params: {"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>"", "controller"=>"invoices", "action"=>"create", "invoice"=>{"amount_due"=>100.0, "due_date"=>"01/03/2024", "payment_status"=>0, "client_id"=>""}} }[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 688)
+  [1m[36mCACHE Invoice Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "invoices"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
