@@ -8,7 +8,11 @@ import RegistrationPage from './components/user/RegistrationPage'; // Adjust the
 import InvoicePage from './components/invoice/InvoicePage'; // Adjust the path as needed
 import InvoiceCreatePage from './components/invoice/CreateInvoicePage';
 import InvoiceHomePage from './components/invoice/ShowPage'; // Adjust the path as needed
-import InvoiceUpdatePage from './components/invoice/EditPage'
+import InvoiceUpdatePage from './components/invoice/EditPage';
+import JobPage from './components/job/jobPage'; // Adjust the path as needed
+import JobShowPage from './components/job/JobShowPage';
+import JobCreatePage from './components/job/CreateJobPage';
+import JobUpdatePage from './components/job/UpdateJobForm';
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
           <Route path="/invoice/create" element={<ProtectedRoute><InvoiceCreatePage /></ProtectedRoute>} />
           <Route path="invoice/:id" element={<ProtectedRoute><InvoiceHomePage /></ProtectedRoute>} />
           <Route path="invoice/:id/update" element={<ProtectedRoute><InvoiceUpdatePage /></ProtectedRoute>} />
+          <Route path="/job" element={<ProtectedRoute><JobPage /></ProtectedRoute>} />
+          <Route path="job/:id" element={<ProtectedRoute><JobShowPage /></ProtectedRoute>} />
+          <Route path='job/create' element={<ProtectedRoute><JobCreatePage /></ProtectedRoute>} />
+          <Route path='/job/:id/update' element={<ProtectedRoute><JobUpdatePage /></ProtectedRoute>} />
           {/* Update other routes similarly */}
         </Routes>
       </Router>

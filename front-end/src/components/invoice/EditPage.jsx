@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { updateInvoice, getInvoice } from '../../utils/api.js';
 
-const RegistrationForm = () => {
+const UpdateInvoiceForm = () => {
   let { id } = useParams();
 
   const navigate = useNavigate();
@@ -102,4 +102,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default UpdateInvoiceForm;

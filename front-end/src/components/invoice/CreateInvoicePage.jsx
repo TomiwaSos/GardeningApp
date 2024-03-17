@@ -1,7 +1,7 @@
 import React from 'react';
 import InvoiceCreation from './InvoiceCreation'; // Adjust the import path if necessary
 
-const RegistrationPage = () => {
+const CreateInvoicePage = () => {
   return (
     <div>
       <h1>Create Invoice Page</h1>
@@ -11,4 +11,4 @@ const RegistrationPage = () => {
   );
 };
 
-export default RegistrationPage;
+export default CreateInvoicePage;

@@ -88,7 +88,7 @@ export const getInvoices = async () => {
   }
 };
 
-export const createInvoiece = async (amount_due, due_date, payment_status, client_id) => {
+export const createInvoice = async (amount_due, due_date, payment_status, client_id) => {
   try {
     const response = await fetch('http://localhost:3001/invoices', {
       method: 'POST',
@@ -181,6 +181,121 @@ export const deleteInvoice = async (id) => {
     }
   } catch (error) {
     console.error('Invoices error:', error);
+    return false;
+  }
+}
+
+export const getJobs = async () => {
+  try {
+    const response = await fetch (`http://localhost:3001/jobs`, {
+      mehtod: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Jobs error:', error);
+    return false;
+  }
+}
+
+export const getJob = async (id) => {
+  try {
+    const response = await fetch (`http://localhost:3001/jobs/${id}`, {
+      mehtod: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Jobs error:', error);
+    return false;
+  }
+}
+
+export const createJob = async (description, date, location, client_id) => {
+  try {
+    const response = await fetch('http://localhost:3001/jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Include if your backend expects credentials
+      body: JSON.stringify({
+        description,
+        date,
+        location,
+        client_id
+      }),
+    
+    });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Jobs error:', error);
+    return false;
+  }
+}
+
+export const deleteJob = async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3001/invoices/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Include if your backend expects credentials
+    
+    });
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Invoices error:', error);
+    return false;
+  }
+}
+
+export const updateJob = async (id, description, date, location, client_id) => {
+  try {
+    const response = await fetch(`http://localhost:3001/jobs/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Include if your backend expects credentials
+      body: JSON.stringify({
+        id,
+        description,
+        date,
+        location,
+        client_id
+      }),
+    
+    });
+    const data = await response.json();
+    if (response.ok) {
+      if (data.id) {
+        return true;
+      } else {
+        return data;
+      }
+    }
+  } catch (error) {
+    console.error('Jobs error:', error);
     return false;
   }
 }
